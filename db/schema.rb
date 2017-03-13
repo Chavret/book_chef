@@ -10,10 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170313134544) do
+ActiveRecord::Schema.define(version: 20170313142421) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.string   "date"
+    t.integer  "number_customers"
+    t.integer  "meal_id"
+    t.integer  "user_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["meal_id"], name: "index_bookings_on_meal_id", using: :btree
+    t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
+  end
+
+  create_table "meals", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.text     "description"
+    t.integer  "price"
+    t.string   "food_type"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_meals_on_user_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -28,8 +50,12 @@ ActiveRecord::Schema.define(version: 20170313134544) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "address"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "bookings", "meals"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "meals", "users"
 end
