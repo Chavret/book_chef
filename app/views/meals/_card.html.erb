@@ -1,9 +1,0 @@
-<div class="card" style="background-image: linear-gradient(90deg,rgba(0,0,0,0.6),rgba(0,0,0,0.2), rgba(0,0,0,0.2), rgba(0,0,0,0)), url('<%= cl_image_path meal.photo.path, crop: :fill, gravity: :south, height: 280, width: 500 %>')">
-
-  <%= link_to "", meal_path(meal), :class => "card-link" %>
-  <div class="card-user avatar"></div>
-  <div class="card-name"><%= meal.name %></i></div>
-  <div class="card-price">€<strong><%= meal.price %></strong> / guest</div>
-  <div class="card-details"> by <%= meal.user.email %></div>
-</div>
-
