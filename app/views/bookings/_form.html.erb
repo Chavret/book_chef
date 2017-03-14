@@ -1,22 +1,18 @@
 
-
-<div class="container ">
-   <div class="row">
-      <div class="col-sm-offset-4 col-sm-4">
-
-        <%= simple_form_for [@booking] do |f| %>
-          <%= f.error_notification %>
-
-            <%= f.input :date, type: "text", input_html: { class: 'datepicker' }%>
-            <%= f.input :number_customers, collection: Booking::NOCUSTOMERS %>
-
-          <div class="form-actions">
-            <%= f.button :submit %>
-          </div>
+<%= simple_form_for [@meal, @booking] do |f| %>
+  <% if @booking.errors.any? %>
+    <div id="error_explanation text-center">
+      <ul>
+        <% @booking.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
+      </ul>
     </div>
-  </div>
-</div>
+  <% end %>
+  <%= f.input :date, type: "text", input_html: { class: 'datepicker' } %>
+  <%= f.input :number_customers, collection: Booking::NOCUSTOMERS %>
+  <%= f.submit "Book Now!", class: "btn-red" %>
+<% end %>
 
 
 
