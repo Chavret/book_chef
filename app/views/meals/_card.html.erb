@@ -4,6 +4,6 @@
   <div class="card-user avatar"></div>
   <div class="card-name"><%= meal.name %></i></div>
   <div class="card-price">€<strong><%= meal.price %></strong> / guest</div>
-  <div class="card-details"> by <%= meal.user.email %></div>
+  <div class="card-details"> catered by <span> <%= meal.user.first_name + " " + meal.user.last_name %> </span> </div>
 </div>
 

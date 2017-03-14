@@ -4,27 +4,39 @@ User.destroy_all
 
 users_attributes = [
   {
-    email:        "yoko@gmail.com",
+    first_name:   "Angelina",
+    last_name:    "Jolie",
+    email:        "angy@gmail.com",
     password:     "secret"
   },
    {
-    email:        "marcello@gmail.com",
+    first_name:   "Ernest",
+    last_name:    "Hemingway",
+    email:        "ernesto@gmail.com",
     password:     "secret"
   },
    {
-    email:        "robert@gmail.com",
+    first_name:   "Alfred",
+    last_name:    "Hitchcock",
+    email:        "alfy@gmail.com",
     password:     "secret"
   },
   {
-    email:        "emile@gmail.com",
+    first_name:   "Roger",
+    last_name:    "Federer",
+    email:        "roggy@gmail.com",
     password:     "secret"
   },
   {
-    email:        "boris@gmail.com",
+    first_name:   "Pablo",
+    last_name:    "Picasso",
+    email:        "pablou@gmail.com",
     password:     "secret"
   },
   {
-    email:        "romain@gmail.com",
+    first_name:   "Margaret",
+    last_name:    "Thatcher",
+    email:        "maggy@gmail.com",
     password:     "secret"
   },
 ]

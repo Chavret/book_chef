@@ -10,6 +10,11 @@
   padding-bottom: 5em;
 }
 
+.padded-light {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
 .zeromargin {
   margin-left: 0px;
   margin-right: 0px;
@@ -30,10 +35,16 @@
 }
 
 .thin-title {
-  text-align: center;
   font-weight: lighter;
 }
 
 .thin-title span {
+  font-family: $hand-font;
+}
+
+.light-div {
+  background-color: rgba(4,4,4,0.5)
+}
+.hand-font {
   font-family: $hand-font;
 }
