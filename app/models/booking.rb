@@ -6,7 +6,4 @@ class Booking < ApplicationRecord
   validates :number_customers, presence: true, null: false
   validates :meal_id, presence: true
   validates :user_id, presence: true
-
-
-
 end
