@@ -1,36 +1,16 @@
-<div class="text-center">
 
-<h1> Discover all the meals cooked by our great chefs</h1>
-
-</div>
 
 <div class="container">
 
+  <h1 class="thin-title"> Make your <span>sweet sweet</span> selection <h1>
 
   <div class="row">
-
-    <% @meals.each do |meal| %>
-      <div class="col-xs-12 col-md-3">
-
-        <div class="card">
-
-          <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-                                 url(<%= image_path 'meals.jpg'%>)">
-
-              <div class="card-user avatar">
-              </div>
-              <div class="card-name">
-                <%= meal.name %>
-              </div>
-              <div class="card-price">
-                <%= meal.price %>
-              </div>
-              <div class="card-details">
-                <%= link_to 'Click here for details', meal_path(meal) %>
-              </div>
-          </div>
-        </div>
+    <% @meals.each do |m| %>
+      <div class="col-xs-12 col-md-6">
+        <%= render 'card', meal: m %>
       </div>
     <% end %>
+  </div>
 
+  <h6 class="text-center" > Can't find a ideal meal ? <br> Send a message to our team@bookchef.com </h6>
 </div>

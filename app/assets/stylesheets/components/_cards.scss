@@ -1,11 +1,12 @@
 .card {
-  height: 170px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  height: 200px;
+  text-shadow: 2px 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   color: white;
   position: relative;
   margin:10px;
-  border-radius:5px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+  // border-radius:5px;
 }
 .card-user {
   position: absolute;
@@ -28,13 +29,25 @@
   position: absolute;
   top: 10px;
   left: 10px;
+  font-size: 30px;
+  color:white;
+}
+.card-name i {
   font-size: 20px;
   color:white;
 }
 .card-price {
   position: absolute;
+  font-size: 20px;
+  color: $brand-color;
   bottom: 10px;
   left: 10px;
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.7);
+}
+
+.card-price strong {
+  font-size: 30px;
+  font-weight: light;
 }
 .card-description h2 {
   font-size: 24px;
@@ -54,4 +67,17 @@
 }
 .card-link:hover{
   opacity: 0.1;
+
 }
+.card-show {
+  background-size: cover;
+  height: 100vh;
+  color: white;
+}
+.card-show h1 {
+  color: $red;
+}
+.card-show strong {
+  color: $red;
+}
+

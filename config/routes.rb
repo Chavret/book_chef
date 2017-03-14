@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   mount Attachinary::Engine => "/attachinary"
   root to: 'pages#home'
 
+
   resources :meals, only: [:index, :new, :show, :create] do
     resources :bookings, only: [:new, :create]
   end

@@ -33,7 +33,7 @@ users_attributes.each { |params| User.create!(params) }
 
 meals_attributes = [
   {
-    name:        "Kawai",
+    name:        "Kawaï 寿司",
     description: "Sushi selection, vegetarian various types of fish and seafood, sushi prepared in front of you and your guests.",
     price:       "54",
     food_type:   "Japanese",
@@ -57,7 +57,7 @@ meals_attributes = [
     photo_url:   "http://i.huffpost.com/gadgets/slideshows/334991/slide_334991_3367253_free.jpg"
   },
   {
-    name:        "Mezzeh delight",
+    name:        "Mezzeh Delight المزة",
     description: "Chicken kofta served with bulgur wheat,kale, sunflower seeds, pumpkin seeds, fresh herbs ,tender stem broccoli and pomegranate seeds with mint cucumber dill natural joghurt dip.",
     price:       "35",
     food_type:   "Lebanese",
