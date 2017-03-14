@@ -12,6 +12,7 @@
       </div>
 
       <div class="col-xs-12 col-md-6 text-center">
+        <%= image_tag @meal.user.facebook_picture_url, class: "avatar-xl" %>
         <h3> catered to you by </h3>
         <h1 class = "hand-font"><%= @meal.user.first_name + " " + @meal.user.last_name%></h1>
         <h5> <i class="fa fa-envelope-o" aria-hidden="true"></i> <br>  <%= @meal.user.email %></h5>
@@ -28,10 +29,18 @@
   </div>
 
   <div class="padded-light text-center">
-    <h4><i class="fa fa-comments-o" aria-hidden="true"></i> Dietary requirements or menu changes?</h4>
-    <h5>After you've booked you can customise the menu directly with the chef.</h5>
-    <h4><i class="fa fa-cutlery" aria-hidden="true"></i> For any kitchen</h4>
-    <h5>The chef will contact you to discuss your kitchen facilities and equipment.</h5>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <h4><i class="fa fa-comments-o" aria-hidden="true"></i> Dietary requirements or menu changes?</h4>
+          <h5>After you've booked you can customise the menu directly with the chef.</h5>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <h4><i class="fa fa-cutlery" aria-hidden="true"></i> For any kitchen</h4>
+          <h5>The chef will contact you to discuss your kitchen facilities and equipment.</h5>
+        </div>
+      </div>
+    </div>
   </div>
 
 </div>
