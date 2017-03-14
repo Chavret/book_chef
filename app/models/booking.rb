@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
-  NOCUSTOMERS = (1..9)
+  NOCUSTOMERS = (1..10)
   belongs_to :meal
   belongs_to :user
   validates :date, presence: true, null: false

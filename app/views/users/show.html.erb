@@ -27,7 +27,7 @@
             <td><%= booking.number_customers %></td>
             <td><%= link_to 'Show', booking, class: "btn btn-primary" %></td>
             <td><%= link_to 'Validate', edit_booking_path(booking), class: "btn btn-warning" %></td>
-            <td><%= link_to 'Destroy', booking,class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Destroy', meal_booking_path(@user, booking),class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>
