@@ -55,3 +55,14 @@
 .card-link:hover{
   opacity: 0.1;
 }
+.card-show {
+  background-size: cover;
+  color: white;
+}
+.card-show h1 {
+  color: $red;
+}
+.card-show strong {
+  color: $red;
+}
+
