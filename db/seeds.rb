@@ -1,3 +1,4 @@
+
 User.destroy_all
 users_attributes = [
   {
