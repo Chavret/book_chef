@@ -12,6 +12,8 @@ gem 'cloudinary'
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
 gem 'sass-rails'
 gem 'jquery-rails'
