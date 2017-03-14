@@ -16,7 +16,6 @@
   color:white;
   text-decoration:none;
 }
-
 .card-details {
   position: absolute;
   right: 10px;
@@ -24,6 +23,10 @@
   font-size: 20px;
   color:white;
   text-decoration:none;
+}
+.card-details span {
+  font-family: $hand-font;
+  font-size: 25px;
 }
 .card-name {
   position: absolute;
@@ -44,7 +47,6 @@
   left: 10px;
   text-shadow: 2px 2px 3px rgba(0,0,0,0.7);
 }
-
 .card-price strong {
   font-size: 30px;
   font-weight: light;
@@ -73,11 +75,17 @@
   background-size: cover;
   height: 100vh;
   color: white;
+  text-shadow: 2px 1px 3px rgba(0,0,0,0.3);
 }
 .card-show h1 {
-  color: $red;
+  // color: $red;
+  font-size: 50px;
 }
 .card-show strong {
   color: $red;
+}
+.card-show h4 {
+  margin-top: 0px;
+
 }
 
