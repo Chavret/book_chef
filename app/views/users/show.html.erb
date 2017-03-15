@@ -11,23 +11,29 @@
         <table class = "table">
         <thead>
           <tr>
-            <th>User</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Number of customers</th>
+            <th>Email</th>
             <th>Date</th>
             <th>Meal</th>
-            <th>Number of customers</th>
+            <th>Status</th>
             <th colspan="3"></th>
           </tr>
         </thead>
         <tbody >
           <% @bookings.each do |booking| %>
             <tr>
+              <td><%= booking.user.first_name %></td>
+              <td><%= booking.user.last_name %></td>
+              <td><%= booking.number_customers %></td>
               <td><%= booking.user.email %></td>
               <td><%= booking.date %></td>
               <td><%= booking.meal.name %></td>
-              <td><%= booking.number_customers %></td>
+              <td><%= booking.status != "Confirmed" ? "Pending approval": "Confirmed" %>  </td>
               <td><%= link_to 'Show', booking, class: "btn btn-primary" %></td>
-              <td><%= link_to 'Validate', edit_booking_path(booking), class: "btn btn-warning" %></td>
-              <td><%= link_to 'Destroy', meal_booking_path(@user, booking),class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Destroy', meal_booking_path(@user, booking),class: "btn btn-success", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Validate', confirm_path(booking), method: :post, class: "btn btn-danger" %></td>
             </tr>
           <% end %>
         </tbody>
