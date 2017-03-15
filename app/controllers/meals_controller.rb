@@ -3,6 +3,12 @@ class MealsController < ApplicationController
 
   def index
     @meals = Meal.all
+    @receive_food_type = params[:food_type]
+    @meal_selected = Meal.where(food_type: @receive_food_type)
+    unless params[:search_name].nil?
+      @search = params[:search_name].to_s
+      @meal = Meal.where(name: @search)
+    end
   end
 
   def show
