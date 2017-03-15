@@ -31,6 +31,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.status = "Pending approval"
     @booking.user = current_user
     @booking.meal = @meal
     if @booking.save
@@ -43,6 +44,13 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
+    redirect_to user_path(current_user.id)
+  end
+
+  def confirm
+    @booking = Booking.find(params[:id])
+    @booking.status = "Confirmed"
+    @booking.save
     redirect_to user_path(current_user.id)
   end
 
