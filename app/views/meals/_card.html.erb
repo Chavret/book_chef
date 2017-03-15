@@ -6,7 +6,7 @@
       <%= image_tag meal.user.facebook_picture_url, class: "avatar-large" %>
     <% end %>
   </div>
-  <div class="card-name"><%= meal.name %></i></div>
+  <div class="card-name"><%= meal.name %><br><span><%= meal.food_type %></span></div>
   <div class="card-price">€<strong><%= meal.price %></strong> / guest</div>
   <div class="card-details"> catered by <span> <%= meal.user.first_name + " " + meal.user.last_name %> </span> </div>
 </div>
