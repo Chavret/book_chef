@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :bookings, only: [:index, :edit, :update]
+  post "/bookings/:id/confirm", to: "bookings#confirm", as: "confirm"
   resources :meals, only: [:index, :new, :show, :create] do
     resources :bookings, only: [:new, :create, :destroy]
   end

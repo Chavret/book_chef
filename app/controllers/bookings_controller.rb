@@ -31,6 +31,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.status = "Pending approval"
     @booking.user = current_user
     @booking.meal = @meal
     if @booking.save
@@ -46,6 +47,13 @@ class BookingsController < ApplicationController
     redirect_to user_path(current_user.id)
   end
 
+  def confirm
+    @booking = Booking.find(params[:id])
+    @booking.status = "Confirmed"
+    @booking.save
+    redirect_to user_path(current_user.id)
+  end
+
   private
 
   def booking_params
@@ -53,7 +61,7 @@ class BookingsController < ApplicationController
   end
 
   def set_meal
-    meal_id = params[:meal_id].match(/[a-zA-Z0-9]/)
+    meal_id = params[:meal_id].match(/[a-zA-Z0-9]*/)
     @meal = Meal.find(meal_id.to_s.to_i)
   end
 
