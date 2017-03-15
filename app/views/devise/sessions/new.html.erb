@@ -1,10 +1,9 @@
-
-
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 50%), url('<%= image_path "background.jpg" %>');">
   <div class="banner-content">
     <div class="container">
       <div class="rows">
         <div class="col-xs-12 col-md-4 col-md-offset-1 text-center">
+
           <div class="login">
             <div class="title-login">Welcome to Bookchef !</div>
               <div class = "login-content">
@@ -12,7 +11,7 @@
                   <div class= "remember">Or you can sign in</div>
                 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                   <div class="form-inputs">
-                    <%= f.input :email, placeholder: "Please enter your email", label: false, required: false, autofocus: true %>
+                    <%= f.input :email, placeholder: "joël.robuchon@gmail.com", label: false, required: false, autofocus: true %>
                     <%= f.input :password, placeholder: "Enter your password", label: false, required: false %>
                     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
                   </div>
@@ -23,10 +22,10 @@
                 <% end %>
               </div>
           </div>
+
         </div>
       </div>
     </div>
-
   </div>
 </div>
 

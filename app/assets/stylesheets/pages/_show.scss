@@ -1,7 +1,31 @@
+.show-wrapper {
+  background-size: cover;
+  height: 100vh;
+  color: white;
+  text-shadow: 2px 1px 3px rgba(0,0,0,0.3);
+}
+.show-wrapper h1 {
+  // color: $red;
+  font-size: 50px;
+}
+.show-wrapper strong {
+  color: $red;
+}
+.show-wrapper h4 {
+  margin-top: 0px;
+}
+
 .btn-nomargeleft {
   margin-left: 0px;
 }
-
 .font-light {
   font-weight: lighter;
+}
+.show-price {
+  font-size: 35px;
+  color: $brand-color;
+}
+.show-price strong {
+  font-size: 50px;
+  font-weight: light;
 }

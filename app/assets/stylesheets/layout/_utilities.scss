@@ -34,17 +34,21 @@
   background: #3b5998;
 }
 
+// Titles
 .thin-title {
   font-weight: lighter;
 }
-
 .thin-title span {
   font-family: $hand-font;
 }
-
-.light-div {
-  background-color: rgba(4,4,4,0.5)
-}
 .hand-font {
   font-family: $hand-font;
+}
+
+//div
+// .black-background {
+//   background-color: black;
+// }
+.light-div {
+  background-color: rgba(4,4,4,0.5)
 }
