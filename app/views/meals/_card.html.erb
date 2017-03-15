@@ -2,7 +2,9 @@
 
   <%= link_to "", meal_path(meal), :class => "card-link" %>
   <div class="card-user">
-    <%= image_tag meal.user.facebook_picture_url, class: "avatar-large" %>
+    <% unless meal.user.facebook_picture_url.nil? %>
+      <%= image_tag meal.user.facebook_picture_url, class: "avatar-large" %>
+    <% end %>
   </div>
   <div class="card-name"><%= meal.name %></i></div>
   <div class="card-price">€<strong><%= meal.price %></strong> / guest</div>

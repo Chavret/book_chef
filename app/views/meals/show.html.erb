@@ -12,7 +12,9 @@
       </div>
 
       <div class="col-xs-12 col-md-6 text-center">
-        <%= image_tag @meal.user.facebook_picture_url, class: "avatar-xl" %>
+        <% unless @meal.user.facebook_picture_url.nil? %>
+          <%= image_tag @meal.user.facebook_picture_url, class: "avatar-xl" %>
+        <% end%>
         <h3> catered to you by </h3>
         <h1 class = "hand-font"><%= @meal.user.first_name + " " + @meal.user.last_name%></h1>
         <h5> <i class="fa fa-envelope-o" aria-hidden="true"></i> <br>  <%= @meal.user.email %></h5>
