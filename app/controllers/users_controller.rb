@@ -4,7 +4,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @bookings = @user.bookings
     @booked = []
-    @booked = Booking.where(meal_id: 11)
+    @user.meals.each do |meal|
+      mealid = meal.id
+      @booked << Booking.where(meal_id: mealid)
+    end
+    @booked.flatten!
   end
 
 end

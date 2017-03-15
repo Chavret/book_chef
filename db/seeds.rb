@@ -225,7 +225,7 @@ meals_attributes = [
 
 meals_attributes.each { |params| Meal.create!(params) }
 
-500.times  do
+100.times  do
   date = rand(1..90).days.from_now.strftime("%d/%m/%Y")
   number_customers = rand(2..9)
 
