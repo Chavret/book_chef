@@ -20,7 +20,7 @@
   <div class="row">
     <% if @search.nil? %>
       <% if (@receive_food_type.nil? || @meal_selected.first.nil?)%>
-        <% if @meal_selected.first.nil?%>
+        <% if (@meal_selected.first.nil? && @receive_food_type != nil)%>
           <p>Sorry, we don't provide <strong><%= @receive_food_type %></strong> yet, Below there are the meals we provide :</p>
         <% end %>
         <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
