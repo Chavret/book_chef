@@ -53,7 +53,7 @@ class BookingsController < ApplicationController
   end
 
   def set_meal
-    meal_id = params[:meal_id].match(/[a-zA-Z0-9]/)
+    meal_id = params[:meal_id].match(/[a-zA-Z0-9]*/)
     @meal = Meal.find(meal_id.to_s.to_i)
   end
 
