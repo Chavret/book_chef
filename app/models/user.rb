@@ -6,6 +6,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable, omniauth_providers: [:facebook, :google_oauth2]
 
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
 
    def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)

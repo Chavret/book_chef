@@ -15,6 +15,8 @@ gem 'coffee-rails'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
+gem "gmaps4rails"
+
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'uglifier'
@@ -23,9 +25,14 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'devise'
+gem "geocoder"
 
 source "https://rails-assets.org" do
   gem 'rails-assets-bootstrap-datepicker'
+end
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
 end
 
 group :development, :test do
