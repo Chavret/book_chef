@@ -25,7 +25,9 @@ $(document).ready(function() {
       $(".chief-dash").removeClass("invisible");
     }, 500);
     setTimeout(function() {
-      window.scrollTo(0,document.body.scrollHeight);
+      var $container = $("html,body");
+      var $scrollTo = $('.booking-content');
+      $container.animate({scrollTop: $scrollTo.offset().top - $container.offset().top, scrollLeft: 0},300);
     }, 500);
   });
   $('#customer').click(function(e) {
@@ -35,7 +37,9 @@ $(document).ready(function() {
       $(".customer-dash").removeClass("invisible");
     }, 500);
     setTimeout(function() {
-      window.scrollTo(0,document.body.scrollHeight);
+      var $container = $("html,body");
+      var $scrollTo = $('.booking-content');
+      $container.animate({scrollTop: $scrollTo.offset().top - $container.offset().top, scrollLeft: 0},300);
     }, 500);
   });
 });
