@@ -3,7 +3,9 @@
  * These are examples of utilities classes
  * Feel free to change them and create your own
  * ------------------------------------- */
-
+::-webkit-input-placeholder { transition : opacity 0.5s; }
+::-moz-placeholder { transition : opacity 0.5s; }
+:-ms-input-placeholder { transition : opacity 0.5s; }
 // Paddings
 .padded {
   padding-top: 5em;
@@ -51,4 +53,20 @@
 // }
 .light-div {
   background-color: rgba(4,4,4,0.5)
+}
+.invisible   {
+  display: none;
+  opacity : 0;
+}
+.invisible::-moz-placeholder {
+  display: none;
+  opacity : 0;
+}
+.invisible:-ms-input-placeholder {
+  display: none;
+  opacity : 0;
+}
+.invisible::-webkit-input-placeholder {
+  display: none;
+  opacity : 0;
 }

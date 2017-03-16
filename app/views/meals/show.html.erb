@@ -11,7 +11,11 @@
         <div class="col-xs-12 col-md-6 light-div padded-light">
           <h3 class="font-light" style="font-weight: lighter;"><%= @meal.description %></h3>
           <h2 class="show-price">€<strong><%= @meal.price %></strong> / guest</h2>
-          <div class= "padded-light"> <%= link_to 'book now', new_meal_booking_path(@meal), class: "btn-nomargeleft btn-red " %> </div>
+          <div class= "padded-light">
+
+            <input id="btn-form" class="btn-nomargeleft btn-red" name="button" type="button" value="Book Now!" />
+
+          </div>
           <div class= ""><%= link_to 'back to meals', meals_path %> </div>
 
         </div>
@@ -41,5 +45,8 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="display-meals invisible">
+    <%= render 'bookings/form', meal: @meal, booking: @booking %>
   </div>
 <!-- </div> -->

@@ -1,19 +1,31 @@
-
-<%= simple_form_for [@meal, @booking] do |f| %>
-  <% if @booking.errors.any? %>
-    <div id="error_explanation text-center">
-      <ul>
-        <% @booking.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+<div class="form-banner">
+  <div class="container">
+    <h1 class = "text-center">New Booking</h1>
+  </div>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-sm-offset-4 col-sm-4">
+        <%= simple_form_for [meal, booking] do |f| %>
+          <% if @booking.errors.any? %>
+            <div id="error_explanation text-center">
+              <ul>
+                <% @booking.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <%= f.input :date, type: "text", input_html: { class: 'datepicker' } %>
+          <%= f.input :number_customers, collection: Booking::NOCUSTOMERS %>
+          <div class="search-form">
+            <%= f.submit "Book Now!", class: "btn-red" %>
+            <%= link_to 'Back', root_path, class: "btn-red text-center" %>
+          </div>
         <% end %>
-      </ul>
+      </div>
     </div>
-  <% end %>
-  <%= f.input :date, type: "text", input_html: { class: 'datepicker' } %>
-  <%= f.input :number_customers, collection: Booking::NOCUSTOMERS %>
-  <%= f.submit "Book Now!", class: "btn-red" %>
-<% end %>
-
+  </div>
+</div>
 
 
 
