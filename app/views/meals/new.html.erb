@@ -1,7 +1,8 @@
 <div class="container">
   <div class="rows">
     <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
-      <h1 class="home_title">Create new meal</h1>
+      <h1 class="thin-title text-center"> Create your <span>sweet sweet</span> meal <h1>
+      <h1 class="home_title"></h1>
       <%= simple_form_for @meal do |f| %>
         <% if @meal.errors.any? %>
           <div id="error_explanation text-center">
@@ -12,11 +13,11 @@
           </ul>
           </div>
         <% end %>
-        <%= f.input :name %>
-        <%= f.input :description %>
-        <%= f.input :food_type, collection: Meal::FOOD_TYPE %>
-        <%= f.input :price %>
-        <%= f.input :photo, as: :attachinary %>
+        <%= f.input :name, label: "Name your Meal", placeholder: "50 Shades of Grains" %>
+        <%= f.input :description, label: "Describe it", placeholder: "Delicious blend of quinoa, chia seeds, tapioca, kamut, oat, bulgar, rye, sorghum, spelt, teff with a pinch of salt !" %>
+        <%= f.input :food_type,label: "Pick a Food Type", placeholder: "Category - e.g. Italian", collection: Meal::FOOD_TYPE, prompt: "Category", selected: "Paleo" %>
+        <%= f.input :price, label: "Make Money", placeholder: "Price per Guest - e.g. €25" %>
+        <%= f.input :photo, label: "Add a Pic !", as: :attachinary, class: "text-center" %>
         <%= f.button :submit, class: "btn btn-red" %>
       <% end %>
     </div>

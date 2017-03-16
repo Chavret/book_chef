@@ -27,8 +27,8 @@
                         <strong style="color: #FF2D57"><%= @booking.meal.user.first_name + " " + @booking.meal.user.last_name%></strong>
                         <em> will cook the </em> <strong style="color: #FF2D57"><%= @booking.meal.name %></strong><br>
                         <em>on</em>  <strong style="color: #FF2D57"><%= @booking.date %></strong><em> at your place.</em> <br>
-                         <em>He will contact you to arrange the venue.</em><br>
-                         <em>For any special request, you may reach him directly: </em> <strong style="color: #FF2D57"><%= @booking.meal.user.email %></strong><br><br>
+                         <em><%= @booking.meal.user.first_name %> will contact you to arrange the venue.</em><br>
+                         <em>For any special request, you may reach the chef directly: </em> <strong style="color: #FF2D57"><%= @booking.meal.user.email %></strong><br><br>
 
                         Thank you,<br>
                         The BookChef Team
