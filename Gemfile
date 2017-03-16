@@ -24,6 +24,8 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'devise'
 
+gem "letter_opener", group: :development
+
 source "https://rails-assets.org" do
   gem 'rails-assets-bootstrap-datepicker'
 end

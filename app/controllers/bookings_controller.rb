@@ -35,7 +35,8 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.meal = @meal
     if @booking.save
-      @booking.save
+      # @booking.save
+      BookingMailer.booking_validation(@booking).deliver_now
       redirect_to user_path(current_user.id)
     else
       render "new"
@@ -51,6 +52,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.status = "Confirmed"
     @booking.save
+    BookingMailer.booking_confirmation(@booking).deliver_now
     redirect_to user_path(current_user.id)
   end
 
