@@ -1,25 +1,28 @@
-<div class="container">
-  <div class="rows">
-    <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
-      <h1 class="thin-title text-center"> Create your <span>sweet sweet</span> meal <h1>
-      <h1 class="home_title"></h1>
-      <%= simple_form_for @meal do |f| %>
-        <% if @meal.errors.any? %>
-          <div id="error_explanation text-center">
-          <ul>
-            <% @meal.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-            <% end %>
-          </ul>
-          </div>
+<div class="banner-backgroundonly", style="background-image: linear-gradient(100deg, rgba(257,257,257,0.1) 20%, rgba(257,257,257,0.6),rgba(257,257,257,0.8), rgba(257,257,257,1) 50%), url('<%= image_path "create_a_meal.jpg" %>") >
+
+  <div class="container">
+    <div class="rows">
+      <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
+        <h1 class="thin-title text-center"> Create your <span>sweet sweet</span> meal <h1>
+        <h1 class="home_title"></h1>
+        <%= simple_form_for @meal do |f| %>
+          <% if @meal.errors.any? %>
+            <div id="error_explanation text-center">
+            <ul>
+              <% @meal.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+            </ul>
+            </div>
+          <% end %>
+          <%= f.input :name, label: "Name your Meal", placeholder: "50 Shades of Grains" %>
+          <%= f.input :description, label: "Describe it", placeholder: "Delicious blend of quinoa, chia seeds, tapioca, kamut, oat, bulgar, rye, sorghum, spelt, teff with a pinch of salt !" %>
+          <%= f.input :food_type,label: "Pick a Food Type", placeholder: "Category - e.g. Italian", collection: Meal::FOOD_TYPE, prompt: "Category", selected: "Paleo" %>
+          <%= f.input :price, label: "Make Money", placeholder: "Price per Guest - e.g. €25" %>
+          <%= f.input :photo, label: "Add a Pic !", as: :attachinary, class: "text-center" %>
+          <%= f.button :submit, class: "btn btn-red" %>
         <% end %>
-        <%= f.input :name, label: "Name your Meal", placeholder: "50 Shades of Grains" %>
-        <%= f.input :description, label: "Describe it", placeholder: "Delicious blend of quinoa, chia seeds, tapioca, kamut, oat, bulgar, rye, sorghum, spelt, teff with a pinch of salt !" %>
-        <%= f.input :food_type,label: "Pick a Food Type", placeholder: "Category - e.g. Italian", collection: Meal::FOOD_TYPE, prompt: "Category", selected: "Paleo" %>
-        <%= f.input :price, label: "Make Money", placeholder: "Price per Guest - e.g. €25" %>
-        <%= f.input :photo, label: "Add a Pic !", as: :attachinary, class: "text-center" %>
-        <%= f.button :submit, class: "btn btn-red" %>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>

@@ -3,44 +3,45 @@
     <div class="row">
       <div class="col-xs-12 col-md-6 ">
         <div class="img-container">
-          <%= image_tag("chief.jpg", id: "chief", class: "img-dash")%>
+          <%= image_tag("chef.png", id: "chief", class: "img-dash")%>
         </div>
       </div>
       <div class="col-xs-12 col-md-6 ">
         <div class="img-container">
-          <%= image_tag("receive.jpg", id: "customer", class: "img-dash")  %>
+          <%= image_tag("meal.png", id: "customer", class: "img-dash")  %>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12 col-md-6 ">
         <div class="img-container">
-          <h2><strong>My Appointments</strong></h2>
+          <h1 class="thin-title text-center">My bookings as a <span>Chef</span><h1>
+          <h2> </h2>
         </div>
       </div>
       <div class="col-xs-12 col-md-6 ">
         <div class="img-container">
-          <h2><strong>My Diners</strong></h2>
+           <h1 class="thin-title text-center">My bookings as a <span>Guest</span><h1>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 <div class="chief-dash invisible">
   <div class="container">
     <div class="row">
       <div class="booking-content">
-        <div class=" col-sm-10">
-          <h2>Bookings where I'll cook</h2>
+        <div class=" col-xs-12">
+          <h2>I will cook for...</h2>
           <table class = "table">
           <thead>
             <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Number of customers</th>
+              <th>Guest</th>
               <th>Email</th>
-              <th>Date</th>
               <th>Meal</th>
+              <th>Guests #</th>
+              <th>Date</th>
               <th>Status</th>
               <th colspan="3"></th>
             </tr>
@@ -48,21 +49,27 @@
           <tbody >
             <% @booked.each do |booking| %>
               <tr>
-                <td><%= booking.user.first_name %></td>
-                <td><%= booking.user.last_name %></td>
-                <td><%= booking.number_customers %></td>
+                <td class="hand-font"><%= booking.user.first_name + " " + booking.user.last_name %></td>
                 <td><%= booking.user.email %></td>
-                <td><%= booking.date %></td>
                 <td><%= booking.meal.name %></td>
-                <td><%= booking.status != "Confirmed" ? "Pending approval": "Confirmed" %>  </td>
-                <td><%= link_to 'Show', booking, class: "btn btn-primary" %></td>
-                <td><%= link_to 'Destroy', meal_booking_path(@user, booking),class: "btn btn-success", method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                <td><%= link_to 'Validate', confirm_path(booking), method: :post, class: "btn btn-danger" %></td>
+                <td><%= booking.number_customers %></td>
+                <td><%= booking.date %></td>
+                <td>
+                  <% if booking.status != "Confirmed" %>
+                    <span><%= "Pending" %></span>
+                  <% else %>
+                    <span class="red-text"><%= "Confirmed" %></span>
+                  <% end %>
+                </td>
+
+                <td><%= link_to 'Show', booking, class: "btn-transparent" %></td>
+                <td><%= link_to 'Destroy', meal_booking_path(@user, booking),class: "btn-transparent", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= link_to 'Validate', confirm_path(booking), method: :post, class: "btn btn-success" %></td>
               </tr>
             <% end %>
           </tbody>
         </table>
-        <%= link_to 'Go back home',  root_path, :class => "btn btn-primary "%>
+        <%= link_to 'Back to meals',  meals_path, :class => "btn btn-primary "%>
         </div>
       </div>
     </div>
@@ -70,24 +77,20 @@
   <br>
 </div>
 
-
-
-
 <div class="customer-dash invisible">
   <div class="container">
     <div class="row">
       <div class="booking-content">
-        <div class="col-sm-10">
-          <h2>Bookings where I'll eat!</h2>
+        <div class="col-xs-12">
+          <h2>I will eat with...</h2>
           <table class = "table">
           <thead>
             <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Number of customers</th>
+              <th>Chef</th>
               <th>Email</th>
-              <th>Date</th>
               <th>Meal</th>
+              <th>Guests #</th>
+              <th>Date</th>
               <th>Status</th>
               <th colspan="3"></th>
             </tr>
@@ -95,21 +98,26 @@
           <tbody >
             <% @bookings.each do |booking| %>
               <tr>
-                <td><%= booking.user.first_name %></td>
-                <td><%= booking.user.last_name %></td>
-                <td><%= booking.number_customers %></td>
-                <td><%= booking.user.email %></td>
-                <td><%= booking.date %></td>
+                <td class="hand-font"><%= booking.meal.user.first_name + " " + booking.meal.user.first_name %></td>
+                <td><%= booking.meal.user.email %></td>
                 <td><%= booking.meal.name %></td>
-                <td><%= booking.status != "Confirmed" ? "Pending approval": "Confirmed" %>  </td>
-                <td><%= link_to 'Show', booking, class: "btn btn-primary" %></td>
-                <td><%= link_to 'Cancel', meal_booking_path(@user, booking),class: "btn btn-success", method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                <td><%= link_to 'Validate', confirm_path(booking), method: :post, class: "btn-transparent btn btn-danger" %></td>
+                <td><%= booking.number_customers %></td>
+                <td><%= booking.date %></td>
+                 <td>
+                  <% if booking.status != "Confirmed" %>
+                    <span><%= "Pending" %></span>
+                  <% else %>
+                    <span class="red-text"><%= "Confirmed" %></span>
+                  <% end %>
+                </td>
+                <td><%= link_to 'Show', booking, class: "btn btn-transparent" %></td>
+                <td><%= link_to 'Cancel', meal_booking_path(@user, booking),class: "btn btn-transparent", method: :delete, data: { confirm: 'Do you really want to cancel the booking ?' } %></td>
+               <!--  -->
               </tr>
             <% end %>
           </tbody>
         </table>
-          <%= link_to 'Go back home',  root_path, :class => "btn btn-primary "%>
+          <%= link_to 'Back to meals',  meals_path, :class => "btn btn-primary "%>
         </div>
       </div>
     </div>
