@@ -6,6 +6,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable, omniauth_providers: [:facebook, :google_oauth2]
 
+  after_create :subscribe_to_newsletter
+
 
    def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
@@ -45,6 +47,12 @@ class User < ApplicationRecord
         )
     end
     user
+  end
+
+  private
+
+  def subscribe_to_newsletter
+    SubscribeToNewsletterService.new(self).call
   end
 
 end

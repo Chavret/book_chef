@@ -23,6 +23,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'devise'
+gem 'gibbon'
 
 source "https://rails-assets.org" do
   gem 'rails-assets-bootstrap-datepicker'
