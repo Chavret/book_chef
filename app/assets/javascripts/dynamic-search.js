@@ -17,4 +17,25 @@ $(document).ready(function() {
     $(".display-meals").removeClass("invisible");
     window.scrollTo(0,document.body.scrollHeight);
   });
+
+  $('#chief').click(function(e) {
+    setTimeout(function() {
+      $(".customer-dash").addClass("invisible");
+      $(".chief-dash").addClass("invisible");
+      $(".chief-dash").removeClass("invisible");
+    }, 500);
+    setTimeout(function() {
+      window.scrollTo(0,document.body.scrollHeight);
+    }, 500);
+  });
+  $('#customer').click(function(e) {
+    setTimeout(function() {
+      $(".chief-dash").addClass("invisible");
+      $(".customer-dash").addClass("invisible");
+      $(".customer-dash").removeClass("invisible");
+    }, 500);
+    setTimeout(function() {
+      window.scrollTo(0,document.body.scrollHeight);
+    }, 500);
+  });
 });
