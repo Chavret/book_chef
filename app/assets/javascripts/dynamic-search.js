@@ -42,4 +42,5 @@ $(document).ready(function() {
       $container.animate({scrollTop: $scrollTo.offset().top - $container.offset().top, scrollLeft: 0},300);
     }, 500);
   });
+
 });

@@ -1,8 +1,10 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edit, :booking, :destroy]
+  before_action :set_booking, only: [:show, :edit, :booking, :destroy, :confirm]
   before_action :set_meal, only: [:new, :create]
   def index
     @bookings = Booking.all
+
+    raise
   end
 
   def show
@@ -15,7 +17,7 @@ class BookingsController < ApplicationController
     @booking.update(date: params[:date],
      number_customers: params[:number_customers],
       meal_id: params[:meal_id],
-       user_id: params[:user_id]
+      user_id: params[:user_id]
     )
     if @booking.save
       @booking.save
@@ -35,7 +37,6 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.meal = @meal
     if @booking.save
-      # @booking.save
       BookingMailer.booking_validation(@booking).deliver_now
       redirect_to user_path(current_user.id)
     else
@@ -49,11 +50,13 @@ class BookingsController < ApplicationController
   end
 
   def confirm
-    @booking = Booking.find(params[:id])
     @booking.status = "Confirmed"
-    @booking.save
-    BookingMailer.booking_confirmation(@booking).deliver_now
-    redirect_to user_path(current_user.id)
+    if @booking.save
+      BookingMailer.booking_validation(@booking).deliver_now
+      redirect_to user_path(current_user.id)
+    else
+      redirect_to user_path(current_user.id)
+    end
   end
 
   private
@@ -72,3 +75,5 @@ class BookingsController < ApplicationController
   end
 
 end
+
+

@@ -53,7 +53,7 @@
                 <td><%= booking.user.email %></td>
                 <td><%= booking.meal.name %></td>
                 <td><%= booking.number_customers %></td>
-                <td><%= booking.date %></td>
+                <td><%= booking.date.strftime("%m/%d/%Y") %></td>
                 <td>
                   <% if booking.status != "Confirmed" %>
                     <span><%= "Pending" %></span>
@@ -95,13 +95,14 @@
             </tr>
           </thead>
           <tbody >
+
             <% @bookings.each do |booking| %>
               <tr>
                 <td class="hand-font bold"><%= booking.meal.user.first_name + " " + booking.meal.user.last_name %></td>
                 <td><%= booking.meal.user.email %></td>
                 <td><%= booking.meal.name %></td>
                 <td><%= booking.number_customers %></td>
-                <td><%= booking.date %></td>
+                <td><%= booking.date.strftime("%m/%d/%Y") %></td>
                  <td>
                   <% if booking.status != "Confirmed" %>
                     <span><%= "Pending" %></span>
@@ -125,6 +126,12 @@
   </div>
   <br>
 </div>
-
+<% content_for(:js) do %>
+  <script>
+    $('#alert_user').click(function(e) {
+      <% current_user.alert -= 1 if current_user.alert.to_i > 0  %>
+    });
+  </script>
+<% end%>
 
 

@@ -7,6 +7,7 @@ class MealsController < ApplicationController
 
   def show
     @booking = Booking.new
+
   end
 
 

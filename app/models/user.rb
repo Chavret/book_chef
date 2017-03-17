@@ -38,6 +38,7 @@ class User < ApplicationRecord
            facebook_picture_url: data["image"],
            email: data["email"],
            password: Devise.friendly_token[0,20],
+           alert: 0,
         )
     end
     user
