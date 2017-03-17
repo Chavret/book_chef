@@ -234,7 +234,7 @@ meals_attributes = [
   },
   {
     name:        "Les Demoiselles d'Avignon",
-    description: "French",
+    description: "On the bridge of Avignon, We all dance there, we all dance there,On the bridge of Avignon,We all dance there in a ring",
     price:       50,
     food_type:   "French",
     user:        User.where(last_name: "Picasso").first,
