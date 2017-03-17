@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
       <div class="search-form">
-        <%= select_tag :food_type, options_for_select(Meal::FOOD_TYPE.collect{ |u| u }. insert(0, "Select a Food Type")), class: "select-food-type"%>
+        <%= select_tag :food_type, options_for_select(Meal::FOOD_TYPE.collect{ |u| u }. insert(0, "Select your Food Type")), class: "select-food-type"%>
       </div>
     </div>
   </div>

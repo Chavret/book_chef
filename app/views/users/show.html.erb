@@ -1,29 +1,25 @@
-<div class="dash-banner">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-6 ">
-        <div class="img-container">
-          <%= image_tag("chef.png", id: "chief", class: "img-dash")%>
+<div class="banner-backgroundonly", style="background-color: linear-gradient(100deg, rgba(257,257,257,0.1) 20%, rgba(0,0,0,0.9) 50%))" >
+  <div class="dash-banner ">
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-xs-12 col-sm-6 text-center">
+          <h1 class="thin-title">My bookings as a <span>Host</span><h1>
+          <!-- <div class="img-container"> -->
+            <%= image_tag("meal.png", id: "customer", class: "img-dash")  %>
+          <!-- </div> -->
         </div>
-      </div>
-      <div class="col-xs-12 col-md-6 ">
-        <div class="img-container">
-          <%= image_tag("meal.png", id: "customer", class: "img-dash")  %>
+
+        <div class="col-xs-12 col-sm-6 text-center">
+          <h1 class="thin-title">My bookings as a <span>Chef</span><h1>
+          <!-- <div class="img-container"> -->
+            <%= image_tag("chef.png", id: "chief", class: "img-dash")%>
+          <!-- </div> -->
         </div>
+
       </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-6 ">
-        <div class="img-container">
-          <h1 class="thin-title text-center">My bookings as a <span>Chef</span><h1>
-          <h2> </h2>
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-6 ">
-        <div class="img-container">
-           <h1 class="thin-title text-center">My bookings as a <span>Host</span><h1>
-        </div>
-      </div>
+
     </div>
   </div>
 </div>
@@ -37,7 +33,7 @@
           <table class = "table">
           <thead>
             <tr>
-              <th>Guest</th>
+              <th>Host</th>
               <th>Email</th>
               <th>Meal</th>
               <th>Guests #</th>
@@ -69,6 +65,7 @@
           </tbody>
         </table>
         <%= link_to 'Back to meals',  meals_path, :class => "btn btn-primary "%>
+        <%= link_to 'Back to dashboard',  user_path(current_user), :class => "btn btn-transparent-red "%>
         </div>
       </div>
     </div>
@@ -119,12 +116,10 @@
           </tbody>
         </table>
           <%= link_to 'Back to meals',  meals_path, :class => "btn btn-primary "%>
+          <%= link_to 'Back to dashboard',  user_path(current_user), :class => "btn btn-transparent-red "%>
         </div>
       </div>
     </div>
   </div>
   <br>
 </div>
-
-
-

@@ -11,13 +11,11 @@
         <div class="col-xs-12 col-md-6 light-div padded-light">
           <h3 class="font-light" style="font-weight: lighter;"><%= @meal.description %></h3>
           <h2 class="show-price">€<strong><%= @meal.price %></strong> / guest</h2>
+
           <div class= "padded-light">
-
-            <input id="btn-form" class="btn-nomargeleft btn-red" name="button" type="button" value="Book Now!" />
-
+            <input id="btn-form" class="btn-red" name="button" type="button" value="Book Now!" />
+            <%= link_to 'back to meals',  meals_path, :class => "btn btn-transparent-red "%>
           </div>
-          <div class= ""><%= link_to 'back to meals', meals_path %> </div>
-
         </div>
 
         <div class="col-xs-12 col-md-6 text-center">

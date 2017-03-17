@@ -1,10 +1,10 @@
 .login {
-  background: rgba(255, 247, 229, 0.8);
+  background: rgba(0, 0, 0, 0.5);
   position: absolute;
-  border-radius: 5px;
-  box-shadow: 0 0 12px 0 rgba(0,0,0,0.1), 0 10px 30px 0 rgba(0,0,0,0.2);
+  // border-radius: 5px;
+  box-shadow: 0 0 12px 0 rgba(257,257,257,0.3), 0 10px 30px 0 rgba(0,0,0,0.3);
   margin: -12.8125em 0 0;
-  width: 24em;
+  width: 26em;
   left: 5em;
   top: 200px;
   down: 200px;
@@ -12,9 +12,9 @@
 }
 
 .title-login {
-  font-size: 40px;
+  font-size: 50px;
   font-weight: lighter;
-  color: $red;
+  color: white;
   margin-bottom: 20px;
   margin-top: 23px;
 }
@@ -35,3 +35,5 @@
 .width-login {
   width: 100%;
 }
+
+// rgba(255, 247, 229, 0.7)
