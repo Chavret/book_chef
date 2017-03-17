@@ -49,7 +49,7 @@
                 <td><%= booking.user.email %></td>
                 <td><%= booking.meal.name %></td>
                 <td><%= booking.number_customers %></td>
-                <td><%= booking.date %></td>
+                <td><%= booking.date.strftime("%d/%m/%Y") %></td>
                 <td>
                   <% if booking.status != "Confirmed" %>
                     <span><%= "Pending" %></span>
@@ -98,7 +98,7 @@
                 <td><%= booking.meal.user.email %></td>
                 <td><%= booking.meal.name %></td>
                 <td><%= booking.number_customers %></td>
-                <td><%= booking.date %></td>
+                <td><%= booking.date.strftime("%d/%m/%Y") %></td>
                  <td>
                   <% if booking.status != "Confirmed" %>
                     <span><%= "Pending" %></span>
