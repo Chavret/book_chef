@@ -97,7 +97,7 @@
           <tbody >
             <% @bookings.each do |booking| %>
               <tr>
-                <td class="hand-font bold"><%= booking.meal.user.first_name + " " + booking.meal.user.first_name %></td>
+                <td class="hand-font bold"><%= booking.meal.user.first_name + " " + booking.meal.user.last_name %></td>
                 <td><%= booking.meal.user.email %></td>
                 <td><%= booking.meal.name %></td>
                 <td><%= booking.number_customers %></td>
@@ -105,6 +105,8 @@
                  <td>
                   <% if booking.status != "Confirmed" %>
                     <span><%= "Pending" %></span>
+                  <% elsif booking.status == "Passed"%>
+                    <span class="green-text"><%= "Passed" %></span>
                   <% else %>
                     <span class="red-text"><%= "Confirmed" %></span>
                   <% end %>
@@ -112,6 +114,7 @@
                 <td><%= link_to 'Cancel', meal_booking_path(@user, booking),class: "btn btn-transparent", method: :delete, data: { confirm: 'Do you really want to cancel the booking ?' } %></td>
                <!--  -->
               </tr>
+
             <% end %>
           </tbody>
         </table>
