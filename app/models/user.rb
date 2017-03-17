@@ -7,7 +7,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, omniauth_providers: [:facebook, :google_oauth2]
 
 
-  after_create :subscribe_to_newsletter, :send_welcome_email
+  # after_create :subscribe_to_newsletter, :send_welcome_email
+  after_create :send_welcome_email
 
 
    def self.find_for_facebook_oauth(auth)

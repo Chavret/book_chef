@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20170315132236) do
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.string   "date"
+    t.datetime "date"
     t.integer  "number_customers"
     t.integer  "meal_id"
     t.integer  "user_id"
