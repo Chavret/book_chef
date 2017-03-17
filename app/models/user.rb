@@ -6,7 +6,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable, omniauth_providers: [:facebook, :google_oauth2]
 
-  after_create :subscribe_to_newsletter
+
+  after_create :subscribe_to_newsletter, :send_welcome_email
 
 
    def self.find_for_facebook_oauth(auth)
@@ -26,10 +27,6 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0,20]  # Fake password for validation
       user.save
     end
-
-
-
-
       return user
     end
 
@@ -51,8 +48,14 @@ class User < ApplicationRecord
 
   private
 
+
   def subscribe_to_newsletter
     SubscribeToNewsletterService.new(self).call
+  end
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver_now
+
   end
 
 end

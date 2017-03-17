@@ -17,12 +17,8 @@
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= cloudinary_js_config %>
+    <%= yield(:js) %>
   </body>
 </html>
 
-<script>
-  $(document).ready(function() {
-    if (window.location.href == "")
 
-  });
-</script>

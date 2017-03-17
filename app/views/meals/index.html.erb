@@ -1,61 +1,19 @@
 <div class="container">
 
   <h1 class="thin-title text-center"> Make your <span>sweet sweet</span> selection <h1>
-
+<!-- formulaire de recherche par food_type -->
   <div class="row">
     <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
       <div class="search-form">
-        <%= form_tag(meals_path, method: "get") do %>
-          <%= select_tag :food_type, options_for_select(Meal::FOOD_TYPE.collect{ |u| u }. insert(0, "Select a Food Type")), class: "select-food-type"%>
-          <%= button_tag(type: "submit", class: " btn-red-search") do  %>
-            <i class="fa fa-search"></i>
-          <% end %>
-        <% end %>
+        <%= select_tag :food_type, options_for_select(Meal::FOOD_TYPE.collect{ |u| u }. insert(0, "Select a Food Type")), class: "select-food-type"%>
       </div>
     </div>
   </div>
   <div class="row">
-    <% if @search.nil? %>
-      <% if (@receive_food_type.nil? || @meal_selected.first.nil?)%>
-        <% if (@meal_selected.first.nil? && @receive_food_type != nil)%>
-        <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
-          <p>Sorry, we don't provide <strong><%= @receive_food_type %></strong>food yet. You can find below all the meals we provide :</p>
-        <% end %>
-        </div>
-        <% @meals.each do |m| %>
-          <div class="col-xs-12 col-md-6">
-            <%= render 'card', meal: m %>
-          </div>
-        <% end %>
-      <%else %>
-        <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
-          <h2>Results for <%= @receive_food_type%></h2>
-        </div>
-        <% @meal_selected.each do |m| %>
-          <div class="col-xs-12 col-md-6">
-          <%= render 'card', meal: m %>
-          </div>
-        <%end %>
-      <% end %>
-    <% else %>
-      <% if @meal_selected %>
-        <% @meal_selected.each do |m| %>
-        <div class="col-xs-12 col-md-6">
-          <%= render 'card', meal: m %>
-        </div>
-        <%end %>
-      <% end %>
-      <% if (@meal.length > 0) %>
-        <h2>Results for <%= @search%></h2>
-        <% @meal.each do |m| %>
-          <div class="col-xs-12 col-md-6">
-            <%= render 'card', meal: m %>
-          </div>
-        <%end %>
-      <% end %>
+    <% @meals.each do |m| %>
+      <%= render 'card', meal: m %>
     <% end %>
   </div>
 
-  <h6 class="text-center" > Can't find a ideal meal ? <br> Send a message to our team@bookchef.com </h6>
+  <h6 class="text-center" > Can't find a ideal meal ? <br> Send a message to our bookchefwagon@gmail.com </h6>
 </div>
-

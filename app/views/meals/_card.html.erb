@@ -1,13 +1,15 @@
-<div class="card" style="background-image: linear-gradient(90deg,rgba(0,0,0,0.6),rgba(0,0,0,0.2), rgba(0,0,0,0.2), rgba(0,0,0,0)), url('<%= cl_image_path meal.photo.path, crop: :fill, gravity: :south, height: 280, width: 500 %>')">
+<div class="col-xs-12 col-md-6 card-container">
+  <div class="card <%= meal.food_type %>" style="background-image: linear-gradient(90deg,rgba(0,0,0,0.6),rgba(0,0,0,0.2), rgba(0,0,0,0.2), rgba(0,0,0,0)), url('<%= cl_image_path meal.photo.path, crop: :fill, gravity: :south, height: 280, width: 500 %>')">
 
-  <%= link_to "", meal_path(meal), :class => "card-link" %>
-  <div class="card-user">
-    <% unless meal.user.facebook_picture_url.nil? %>
-      <%= image_tag meal.user.facebook_picture_url, class: "avatar-large" %>
-    <% end %>
+    <%= link_to "", meal_path(meal), :class => "card-link" %>
+    <div class="card-user">
+      <% unless meal.user.facebook_picture_url.nil? %>
+        <%= image_tag meal.user.facebook_picture_url, class: "avatar-large" %>
+      <% end %>
+    </div>
+    <div class="card-name"><%= meal.name %><br><span><%= meal.food_type %></span></div>
+    <div class="card-price">€<strong><%= meal.price %></strong> / guest</div>
+    <div class="card-details"> catered by <span> <%= meal.user.first_name + " " + meal.user.last_name %> </span> </div>
   </div>
-  <div class="card-name"><%= meal.name %><br><span><%= meal.food_type %></span></div>
-  <div class="card-price">€<strong><%= meal.price %></strong> / guest</div>
-  <div class="card-details"> catered by <span> <%= meal.user.first_name + " " + meal.user.last_name %> </span> </div>
 </div>
 

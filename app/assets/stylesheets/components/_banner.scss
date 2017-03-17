@@ -21,3 +21,11 @@
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 20px;
 }
+.form-banner {
+  background-size: cover;
+}
+.banner-backgroundonly {
+  height: 100vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+}
