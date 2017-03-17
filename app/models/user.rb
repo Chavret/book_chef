@@ -5,7 +5,10 @@ class User < ApplicationRecord
   has_many :meals
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable, omniauth_providers: [:facebook, :google_oauth2]
-  after_create :send_welcome_email
+
+
+  after_create :subscribe_to_newsletter, :send_welcome_email
+
 
    def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
@@ -45,8 +48,14 @@ class User < ApplicationRecord
 
   private
 
+
+  def subscribe_to_newsletter
+    SubscribeToNewsletterService.new(self).call
+  end
+
   def send_welcome_email
     UserMailer.welcome(self).deliver_now
+
   end
 
 end
