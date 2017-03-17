@@ -13,7 +13,7 @@ class SubscribeToNewsletterService
         merge_fields: {
           FNAME: @user.first_name,
           LNAME: @user.last_name
-        # }
+        }
       }
     )
   end
