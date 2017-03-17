@@ -38,7 +38,7 @@ $(document).ready(function() {
     }, 500);
     setTimeout(function() {
       var $container = $("html,body");
-      var $scrollTo = $('.booking-content');
+      var $scrollTo = $('.booking-content').last();
       $container.animate({scrollTop: $scrollTo.offset().top - $container.offset().top, scrollLeft: 0},300);
     }, 500);
   });
