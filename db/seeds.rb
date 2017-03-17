@@ -262,7 +262,7 @@ meals_attributes = [
     price:       150,
     food_type:   "French",
     user:        User.where(last_name: "Gainsbarre").first,
-    photo_url:   "http://www.vtfarmtoplate.com/assets/stories/images/Hen%20of%20the%20Wood_1.jpg"
+    photo_url:   "http://www.divinatix.com/wp-content/uploads/2016/04/coquillage.png"
   },
   {
     name:        "Prêt-A-Savourer",
@@ -274,7 +274,7 @@ meals_attributes = [
   },
   {
     name:        "Guernica with a Salmon",
-    description: "",
+    description: "Fuck",
     price:       50,
     food_type:   "French",
     user:        User.where(last_name: "Picasso").first,
@@ -301,7 +301,7 @@ meals_attributes = [
     description: "A cherry tomato. And a lot of alcool.",
     price:       50,
     food_type:   "French",
-    user:        User.where(last_name: "").first,
+    user:        User.where(last_name: "Picasso").first,
     photo_url:   "http://www.wallpapermania.eu/images/lthumbs/2013-08/5849_Professional-photo-berries-in-a-glass-of-drink.jpg"
   },
   {
